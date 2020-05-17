@@ -2,7 +2,6 @@ import React from 'react';
 import axios from 'axios';
 import 'react-fontawesome';
 import 'font-awesome/css/font-awesome.min.css'
-// import '../../index.css'
 import InfiniteScroll from 'react-infinite-scroller';
 import Card from './compontents/Card/index'
 import Nav from './compontents/Nav/index'

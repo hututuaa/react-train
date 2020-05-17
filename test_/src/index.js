@@ -5,7 +5,7 @@ import 'font-awesome/css/font-awesome.min.css';
 import Header from './component/Header.js';
 import './styles/index.less';
 import RouterComponent from './router.js'
-import { BrowserRouter as Router } from 'react-router-dom'
+import { HashRouter as Router } from 'react-router-dom'
 
 
 

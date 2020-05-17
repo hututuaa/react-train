@@ -8,7 +8,7 @@ class RouterComponent extends React.Component {
     render() {
         return (
             <div>
-                <Redirect path="/" to="/popular" />
+                <Redirect to="/popular"/>
                 <Route path="/popular" exact component={Popular} />
                 <Route path="/battle" component={Battle} />
             </div>
