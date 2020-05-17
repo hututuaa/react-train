@@ -1,0 +1,88 @@
+{
+  "name": "test_",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --congig webpack.prod.js --mode production",
+    "dev": "webpack-dev-server --devtool eval --progress --colors --hot --open --content-base build"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/polyfill": "^7.8.7",
+    "@babel/preset-env": "^7.9.6",
+    "@babel/preset-react": "^7.9.4",
+    "@babel/runtime": "^7.9.6",
+    "@babel/runtime-corejs2": "^7.9.6",
+    "@fortawesome/fontawesome": "^1.1.8",
+    "anywhere": "^1.5.0",
+    "autoprefixer": "^9.7.6",
+    "axios": "^0.19.2",
+    "babel-eslint": "^10.1.0",
+    "babel-standalone": "^6.26.0",
+    "clean-webpack-plugin": "^3.0.0",
+    "css-loader": "^3.5.3",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-loader": "^4.0.2",
+    "file-loader": "^6.0.0",
+    "font-awesome": "^4.7.0",
+    "gh-pages": "^2.2.0",
+    "html-webpack-plugin": "^4.3.0",
+    "husky": "^4.2.5",
+    "install": "^0.13.0",
+    "less": "^3.11.1",
+    "less-loader": "^6.1.0",
+    "lint-staged": "^10.2.2",
+    "node-sass": "^4.14.1",
+    "normalize.css": "^8.0.1",
+    "npm": "^6.14.5",
+    "optimize-css-assets-webpack-plugin": "^5.0.3",
+    "postcss-loader": "^3.0.0",
+    "prettier": "^2.0.5",
+    "react": "^16.13.1",
+    "react-custom-scrollbars": "^4.2.1",
+    "react-dom": "^16.13.1",
+    "react-fontawesome": "^1.7.1",
+    "react-infinite-scroller": "^1.2.4",
+    "react-router": "^5.2.0",
+    "react-router-dom": "^5.2.0",
+    "style-loader": "^1.2.1",
+    "url-loader": "^4.1.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.6",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/plugin-transform-runtime": "^7.9.6",
+    "babel-loader": "^8.1.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-airbnb": "^5.0.0",
+    "eslint": "^2.9.0",
+    "eslint-config-airbnb": "^18.1.0",
+    "eslint-plugin-import": "^1.7.0",
+    "eslint-plugin-jsx-a11y": "^1.2.0",
+    "eslint-plugin-react": "^5.0.1",
+    "jsx-loader": "^0.13.2",
+    "mini-css-extract-plugin": "^0.9.0",
+    "react-hot-loader": "^4.12.21",
+    "webpack": "^4.43.0",
+    "webpack-bundle-analyzer": "^3.7.0",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.11.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,less}": [
+      "prettier --write",
+      "git add"
+    ],
+    "**/*.{js,jsx}": "eslint --ext .js"
+  },
+  "keywords": [],
+  "description": ""
+}

@@ -1,0 +1,24 @@
+.header-item {
+    cursor: pointer;
+}
+
+/* .header-item:hover {
+    color: #d2eafb !important;
+} */
+
+/* .headerActive {
+    color: #1890ff
+} */
+
+.header {
+    width: 200px;
+    display: flex ;
+    justify-content: space-around;
+    position: relative;
+    left: 100px;
+    top: 20px;
+    font-size: 24px;
+}
+.active{
+    color: #1890ff;
+}

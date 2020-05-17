@@ -1,0 +1,22 @@
+
+   .nav-active{
+        color: #1890ff
+    }
+  
+    .nav{
+        display: flex;
+        justify-content: center;
+        margin-top: 50px;
+        height: 80px;
+        line-height: 80px;
+        font-size:22px;
+        font-weight: bolder;
+    }
+    .nav .nav-item{
+        margin: 20px ;
+        cursor: pointer;
+    
+    }
+    .nav .nav-item:hover{
+        color:#d2eafb;
+    }

@@ -1,0 +1,63 @@
+.title-1 {
+    font-size: 35px;
+    text-align: center;
+    margin-top: 140px;
+    font-weight: 200,
+}
+
+.first-card,.second-card {
+    width: 1000px;
+    margin: 30px auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.introduce-1 {
+    font-size: 30px;
+    font-weight: 200;
+    position: relative;
+    left: -30px;
+}
+
+.introduce-2 {
+    position: relative;
+    left: 62px;
+    font-size: 30px;
+    font-weight: 200;
+}
+
+.introduce-3 {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 200;
+}
+
+.content-box-1  {
+    width: 220px;
+    height: 220px;
+    background: #ccc;
+    text-align: center;
+
+  
+}
+
+.content-box-2 {
+    width: 220px;
+    height: 220px;
+    background: #ccc;
+    text-align: center;
+}
+
+.content-box-3 {
+    width: 220px;
+    height: 220px;
+    background: #ccc;
+    text-align: center
+}
+
+.title-2 {
+    font-size: 35px;
+    text-align: center;
+    margin-top: 40px;
+    font-weight: 200;
+}

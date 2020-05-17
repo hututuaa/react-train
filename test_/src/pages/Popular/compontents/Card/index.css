@@ -1,0 +1,89 @@
+.fa.fa-user {
+    color: #fba414;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.fa.fa-star {
+    color: #fed71a;
+    display: inline-block ;
+    position: relative;
+    left: -3px;
+    margin-right: 10px;
+}
+
+.fa.fa-code-fork {
+    color: #0eb0c9;
+    display: 'inline-block';
+    margin-right: 10px;
+}
+
+.fa.fa-exclamation-triangle  {
+    color: #ab372f;
+    display: inline-block;
+    position: relative ;
+    left:-8px;
+    margin-right: 10px;
+}
+.content{
+    margin:10px 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+    }
+
+ .content-item {
+    height: 450px;
+    width: 23%;
+    background-color: #ccc;
+    margin: 10px;
+}
+
+.content-item .content-name {
+    font-size: 24px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.content-item .content-name a {
+    text-decoration: none;
+    color: #c02c38;
+}
+
+.content .content-item .content-num {
+    color: black;
+    font-size: 25px;
+    text-align: center;
+    padding: 20px;
+}
+
+.content-img {
+    text-align: center;
+}
+
+.content-item .content-desc {
+    margin: 20px 5px;
+    width: 200px;
+}
+
+.content-item .content-desc ul {
+    list-style: none;
+}
+
+.content-desc ul li {
+    line-height: 30px;
+    width: 300px;
+}
+
+ul li a {
+    text-decoration: none;
+    color: #f1f0ed;
+}
+
+ul li i {
+    font-size: 30px!important;
+    display: block;
+    width: 30px;
+}
