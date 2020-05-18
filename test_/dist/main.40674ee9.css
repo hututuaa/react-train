@@ -27,6 +27,9 @@
 .active{
     color: #1890ff;
 }
+.popular{
+    font-size: 100px!important;
+}
 a {
   text-decoration: none;
   color: rgba(0, 0, 0, 0.65);
@@ -47,6 +50,7 @@ body {
 #app {
   min-width: 1200px;
 }
+
 
 .fa.fa-user {
     color: #fba414;
@@ -195,10 +199,10 @@ ul li i {
     font-size: 35px;
     text-align: center;
     margin-top: 140px;
-    font-weight: 200,
+    font-weight: 200;
 }
 
-.first-card,.second-card {
+.first-card, .second-card {
     width: 1000px;
     margin: 30px auto;
     display: flex;
@@ -225,13 +229,11 @@ ul li i {
     font-weight: 200;
 }
 
-.content-box-1  {
+.content-box-1 {
     width: 220px;
     height: 220px;
     background: #ccc;
     text-align: center;
-
-  
 }
 
 .content-box-2 {
@@ -255,5 +257,81 @@ ul li i {
     font-weight: 200;
 }
 
+.result {
+    width: 1000px;
+    margin: 100px auto;
+}
 
-/*# sourceMappingURL=main.9c7849fc.css.map*/
+.battle-content {
+    display: flex;
+    justify-content: space-around;
+    height: 600px;
+}
+
+.content-left, .content-right {
+    background-color: #ccc;
+    width: 400px;
+}
+
+.imgOne, .imgTwo {
+    width: 150px;
+    height: 150px;
+    margin: 40px auto;
+}
+
+.imgOne img, .imgTwo img {
+    max-width: 100%!important;
+    max-height: 100%!important;
+}
+
+.desc {
+    list-style: none;
+}
+
+.desc li {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.desc li a {
+    margin-left: 25px;
+    font-size: 25px;
+    color: black!important;
+    font-weight: 300!important;
+}
+
+.desc li:first-child a {
+    color: #1890ff!important;
+}
+
+.desc li:last-child a {
+    position: relative;
+    left: -9px;
+}
+
+.fa.fa-compass {
+    color: #7265e6;
+}
+
+.fa.fa-user-o, .fa.fa-users {
+    color: #108EE9;
+}
+
+.fa.fa-user-plus {
+    color: #f78e3d;
+}
+/* 
+.toResult {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.reset {
+    border: 0;
+    background: #add8f7!important;
+    height: 30px;
+    width: 100px;
+    color: white;
+} */
+
+/*# sourceMappingURL=main.40674ee9.css.map*/

@@ -25,7 +25,8 @@ class Popular extends React.Component {
 
   }
   async componentDidMount() {
-    await this.getData();
+  const res =  await this.getData();
+  console.log(res.data.items,"fghjkl")
   }
 
   handleClick = async e => {
@@ -89,7 +90,7 @@ class Popular extends React.Component {
             {myData.map((item, key) => <Card item={item} index={key} key={item.id + '-' + key} />)}
           </div>
         </InfiniteScroll>
-        {loadingBottom ? <div style={{ textAlign: 'center', marginTop: '100px' }}><i className="fa fa-spinner" style={{ fontSize: '130px' }} /></div> : ""}
+        {loadingBottom? <div style={{ textAlign: 'center', marginTop: '100px' }}><i className="fa fa-spinner" style={{ fontSize: '130px' }} /></div> : ""}
       </article>
     );
   }

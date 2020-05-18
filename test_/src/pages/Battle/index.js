@@ -1,9 +1,8 @@
 import React from 'react';
+import './index.css'
 import 'react-fontawesome';
 import 'font-awesome/css/font-awesome.min.css'
-import './index.css'
 import axios from 'axios'
-
 class Battle extends React.Component {
   constructor(props) {
     super(props),
@@ -13,6 +12,9 @@ class Battle extends React.Component {
         showLeft: 'none',
         showRight: 'none',
         isClickable: true,
+        showResult: 'block',
+        leftResult:{},
+        rightResult:{}
       }
   }
   style = {
@@ -39,7 +41,7 @@ class Battle extends React.Component {
   }
 
   getValue = (value) => {
-    let url = `https://api.github.com/uesrs/${value}`
+    let url = `https://api.github.com/users/${value}`
     return new Promise((resolve, reject) => {
       axios.get(url)
         .then(data => {
@@ -60,8 +62,21 @@ class Battle extends React.Component {
     this.setState({
       showLeft: 'block',
     })
-    await this.getValue(leftValue)
+    const res = await this.getValue(leftValue)
+    console.log(res.data, "data")
+    const resDate = res.data;
+    this.setState({
+      leftResult: {
+        name: resDate.name,
+        following: resDate.following,
+        followers: resDate.followers,
+        public_repos: resDate.public_repos,
+        location: resDate.location,
+        login:resDate.login
+      }
 
+    })
+console.log(resDate.followers,'kkkk')
   }
 
   sumbitRight = async () => {
@@ -72,7 +87,19 @@ class Battle extends React.Component {
     this.setState({
       showRight: 'block',
     })
-    await this.getValue(rightValue)
+   const res =  await this.getValue(rightValue)
+   const resDate = res.data;
+   this.setState({
+     rightResult: {
+       name: resDate.name,
+       following: resDate.following,
+       followers: resDate.followers,
+       public_repos: resDate.public_repos,
+       location: resDate.location,
+       login:resDate.login
+     }
+
+   })
 
   }
 
@@ -81,7 +108,7 @@ class Battle extends React.Component {
       leftValue: '',
       showLeft: 'none'
     })
-    console.log(this.state.leftValue, 'ppp')
+
   }
   cancelRight() {
     this.setState({
@@ -89,10 +116,15 @@ class Battle extends React.Component {
       showRight: 'none'
     })
   }
+  changeFlag = () => {
+    const { leftResult, rightResult } = this.state;
+    // this.props.history.push({pathname:`/battle/result?playerOne=${leftValue}&playerTwo=${rightValue}`})
+    this.props.history.push({ pathname: '/battle/result', query: { playerOne: JSON.stringify(leftResult), playerTwo: JSON.stringify(rightResult) } })
+  }
   render() {
-    const { leftValue, rightValue } = this.state;
+    const { leftValue, rightValue, showLeft, showRight } = this.state;
     return (
-      <div >
+      <div>
         <div>
           <div className="title-1">Instructions</div>
           <div className="first-card" >
@@ -121,7 +153,7 @@ class Battle extends React.Component {
           <div className="title-2">Players</div>
           <div className="second-card">
             <div className="left-search">
-              <div style={{ fontWeight: '300' }}>Palyer one</div>
+              <div style={{ fontWeight: '300' }}>Palyer One</div>
               <div className="operation">
                 <input type="text" placeholder="github username" value={this.state.leftValue} onChange={this.changeLeft.bind(this)} style={this.style.input} />
                 <button type="button" disabled={this.state.isClickable} style={this.style.btn} onClick={() => this.sumbitLeft()}>sumbit</button>
@@ -135,7 +167,7 @@ class Battle extends React.Component {
               </div>
             </div>
             <div className="right-search">
-              <div style={{ fontWeight: '300' }}>Palyer one</div>
+              <div style={{ fontWeight: '300' }}>Palyer Two</div>
               <div className="operation">
                 <input type="text" placeholder="github username" value={this.state.rightValue} onChange={this.changeRight.bind(this)} onChange={this.changeRight.bind(this)} style={this.style.input} />
                 <button type="button" disabled={this.state.isClickable} onClick={this.sumbitRight.bind(this)} style={this.style.btn} >sumbit</button>
@@ -148,11 +180,16 @@ class Battle extends React.Component {
                 </div>
               </div>
             </div>
-         
           </div>
+
+        </div>
+        <div style={{ textAlign: 'center', border: 'none', display: (showLeft === 'block' && showRight === "block") ? 'block' : 'none' }}>
+          <button onClick={this.changeFlag} style={{border:'0',background:"#add8f7",height:'30px',width:'100px',color:'white', outline:'none'}}>BATTLE</button>
         </div>
       </div>
-    );
+
+    )
   }
 }
+
 export default Battle
