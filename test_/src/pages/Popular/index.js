@@ -18,8 +18,8 @@ class Popular extends React.Component {
       hasMore: true,
       currentPage: 1,
       loadingBottom: false,
-      language: 'All',
-      loadingTop: true
+      loadingTop: true,
+      gettingData:false
     };
     this.handleClick = this.handleClick.bind(this);
 
@@ -46,7 +46,14 @@ class Popular extends React.Component {
     await this.getData()
   }
   getData = (changeLanguage = false) => {
-    let { currentPage, language, myData, loadingTop, loadingBottom } = this.state;
+    let { currentPage, language, myData, loadingTop, loadingBottom,gettingData } = this.state;
+    if(gettingData){
+      console.log('loading....')
+      return
+    }
+    this.setState({
+      gettingData:true
+    })
     currentPage = changeLanguage ? 1 : currentPage
     language = changeLanguage ? changeLanguage : language
     myData = changeLanguage ? [] : myData
@@ -62,7 +69,8 @@ class Popular extends React.Component {
             loadingBottom: false,
             currentPage: currentPage + 1,
             language: language,
-            loadingTop: false
+            loadingTop: false,
+            gettingData:false
           })
         }).catch(res => {
           reject(res)

@@ -55,7 +55,7 @@ class Result extends React.Component {
                     </div>
                     <div className="content-right">
                         <div style={{ display: rightResult.public_repos === 0 ? 'none' : 'block' }}> {(rightResult.public_repos > leftResult.public_repos) ? <h1 style={{ textAlign: 'center', fontWeight: '300' }}>Winner</h1> : <h1 style={{ textAlign: 'center', fontWeight: '300' }}>Loser</h1>} </div>
-                        <div className="imgTwo"><img style={{ with: '150px', height: '150px' }} src={`https://github.com/${leftResult.login}.png?`} /></div>
+                        <div className="imgTwo"><img style={{ with: '150px', height: '150px' }} src={`https://github.com/${rightResult.login}.png?`} /></div>
                         <h1 style={{ textAlign: 'center', color: '#1890ff', height: '30px' }}>{rightResult.login}</h1>
                         <ul className="desc">
                             <li>
