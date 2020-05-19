@@ -26,7 +26,6 @@ class Popular extends React.Component {
   }
   async componentDidMount() {
   const res =  await this.getData();
-  console.log(res.data.items,"fghjkl")
   }
 
   handleClick = async e => {

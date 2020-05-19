@@ -1,7 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require("html-webpack-plugin")
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-// const {CleanWebpackPlugin} = require('clean-webpack-plugin')
+const {CleanWebpackPlugin} = require('clean-webpack-plugin')
 // const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 module.exports = function (env, argv) {
   const isEnvDevelopment = argv.mode === 'development' || !argv.mode;
@@ -46,7 +46,7 @@ module.exports = function (env, argv) {
         }
     
       }),
-      // new CleanWebpackPlugin(),
+      new CleanWebpackPlugin(),
       // new BundleAnalyzerPlugin(),
 
     ],

@@ -13,8 +13,8 @@ class Battle extends React.Component {
         showRight: 'none',
         isClickable: true,
         showResult: 'block',
-        leftResult:{},
-        rightResult:{}
+        leftResult: {},
+        rightResult: {}
       }
   }
   style = {
@@ -63,20 +63,11 @@ class Battle extends React.Component {
       showLeft: 'block',
     })
     const res = await this.getValue(leftValue)
-    console.log(res.data, "data")
-    const resDate = res.data;
+      const resDate = res.data;
     this.setState({
-      leftResult: {
-        name: resDate.name,
-        following: resDate.following,
-        followers: resDate.followers,
-        public_repos: resDate.public_repos,
-        location: resDate.location,
-        login:resDate.login
-      }
+      leftResult: resDate
 
     })
-console.log(resDate.followers,'kkkk')
   }
 
   sumbitRight = async () => {
@@ -87,19 +78,11 @@ console.log(resDate.followers,'kkkk')
     this.setState({
       showRight: 'block',
     })
-   const res =  await this.getValue(rightValue)
-   const resDate = res.data;
-   this.setState({
-     rightResult: {
-       name: resDate.name,
-       following: resDate.following,
-       followers: resDate.followers,
-       public_repos: resDate.public_repos,
-       location: resDate.location,
-       login:resDate.login
-     }
-
-   })
+    const res = await this.getValue(rightValue)
+    const resDate = res.data;
+    this.setState({
+      rightResult: resDate,
+    })
 
   }
 
@@ -118,7 +101,6 @@ console.log(resDate.followers,'kkkk')
   }
   changeFlag = () => {
     const { leftResult, rightResult } = this.state;
-    // this.props.history.push({pathname:`/battle/result?playerOne=${leftValue}&playerTwo=${rightValue}`})
     this.props.history.push({ pathname: '/battle/result', query: { playerOne: JSON.stringify(leftResult), playerTwo: JSON.stringify(rightResult) } })
   }
   render() {
@@ -184,7 +166,7 @@ console.log(resDate.followers,'kkkk')
 
         </div>
         <div style={{ textAlign: 'center', border: 'none', display: (showLeft === 'block' && showRight === "block") ? 'block' : 'none' }}>
-          <button onClick={this.changeFlag} style={{border:'0',background:"#add8f7",height:'30px',width:'100px',color:'white', outline:'none'}}>BATTLE</button>
+          <button onClick={this.changeFlag} style={{ border: '0', background: "#add8f7", height: '30px', width: '100px', color: 'white', outline: 'none' }}>BATTLE</button>
         </div>
       </div>
 
