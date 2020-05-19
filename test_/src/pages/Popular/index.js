@@ -19,7 +19,8 @@ class Popular extends React.Component {
       currentPage: 1,
       loadingBottom: false,
       language: 'All',
-      loadingTop: true
+      loadingTop: true,
+      gettingData:false,
     };
     this.handleClick = this.handleClick.bind(this);
 
@@ -45,10 +46,18 @@ class Popular extends React.Component {
     await this.getData()
   }
   getData = (changeLanguage = false) => {
-    let { currentPage, language, myData, loadingTop, loadingBottom } = this.state;
+    let { currentPage, language, myData, loadingTop, loadingBottom,gettingData } = this.state;
+    if(gettingData){
+      return
+    }
+    this.setState({
+      gettingData:true,
+      
+    })
     currentPage = changeLanguage ? 1 : currentPage
     language = changeLanguage ? changeLanguage : language
-    myData = changeLanguage ? [] : myData
+    myData = changeLanguage ? [] : myData,
+    loadingBottom = changeLanguage?false:true
     const url = `https://api.github.com/search/repositories?q=stars:%3E1+language:${language}&sort=stars&order=desc&type=Repositories&page=${currentPage}`
     return new Promise((resolve, reject) => {
       axios.get(url)
@@ -61,7 +70,8 @@ class Popular extends React.Component {
             loadingBottom: false,
             currentPage: currentPage + 1,
             language: language,
-            loadingTop: false
+            loadingTop: false,
+            gettingData:false,
           })
         }).catch(res => {
           reject(res)
@@ -76,7 +86,7 @@ class Popular extends React.Component {
     return (
       <article >
         <Nav handleClick={this.handleClick} />
-        {loadingTop ? <div style={{ textAlign: 'center', marginTop: '100px' }}><i className="fa fa-spinner" style={{ fontSize: '130px' }} /></div> : ""}
+        {loadingTop? <div style={{ textAlign: 'center', marginTop: '100px' }}><i className="fa fa-spinner" style={{ fontSize: '130px' }} /></div> : ""}
         <InfiniteScroll
           pageStart={0}
           initialLoad={false}
@@ -89,7 +99,7 @@ class Popular extends React.Component {
             {myData.map((item, key) => <Card item={item} index={key} key={item.id + '-' + key} />)}
           </div>
         </InfiniteScroll>
-        {loadingBottom? <div style={{ textAlign: 'center', marginTop: '100px' }}><i className="fa fa-spinner" style={{ fontSize: '130px' }} /></div> : ""}
+        {!loadingTop&&loadingBottom? <div style={{ textAlign: 'center', marginTop: '100px' }}><i className="fa fa-spinner" style={{ fontSize: '130px' }} /></div> : ""}
       </article>
     );
   }
