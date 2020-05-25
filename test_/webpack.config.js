@@ -17,7 +17,6 @@ module.exports = function (env, argv) {
     devServer: {
       contentBase: './dist',
       historyApiFallback: true,
-
       hot: true,
     },
     plugins: [

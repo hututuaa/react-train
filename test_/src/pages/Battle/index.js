@@ -63,7 +63,7 @@ class Battle extends React.Component {
       showLeft: 'block',
     })
     const res = await this.getValue(leftValue)
-      const resDate = res.data;
+    const resDate = res.data;
     this.setState({
       leftResult: resDate
 
@@ -139,9 +139,9 @@ class Battle extends React.Component {
               <div className="operation">
                 <input type="text" placeholder="github username" value={this.state.leftValue} onChange={this.changeLeft.bind(this)} style={this.style.input} />
                 <button type="button" disabled={this.state.isClickable} style={this.style.btn} onClick={() => this.sumbitLeft()}>sumbit</button>
-                <div style={{ display: this.state.showLeft, width: '400px', height: '100px', background: '#baccd9', position: 'relative', top: '-30px' }} >
-                  <i className="fa fa-times" onClick={this.cancelLeft.bind(this)} style={{ color: '#ee3f4d', fontSize: '30px' }} aria-hidden="true"></i>
-                  <div style={{ color: '#8076a3', margin: '0 auto' }}>
+                <div style={{ display: this.state.showLeft, width: '450px', height: '100px', background: '#baccd9', position: 'relative', top: '-30px' }} >
+                  <div style={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center',height:'100px' }}><i className="fa fa-times" onClick={this.cancelLeft.bind(this)} style={{ color: '#ee3f4d', fontSize: '30px' }} aria-hidden="true"></i></div>
+                  <div style={{ color: '#8076a3',position:'relative',top:'-80px' }}>
                     <img style={{ width: '55px', height: '55px', verticalAlign: 'middle', display: 'inlineBlock', marginLeft: '80px' }} src={`https://github.com/${leftValue}.png?size=200`} />
                     <a href={`https://github.com/${leftValue}`} style={{ color: '#2b73af', fontSize: '30px', verticalAlign: 'middle', marginLeft: '10px' }}>{leftValue}</a>
                   </div>
@@ -154,9 +154,9 @@ class Battle extends React.Component {
                 <input type="text" placeholder="github username" value={this.state.rightValue} onChange={this.changeRight.bind(this)} onChange={this.changeRight.bind(this)} style={this.style.input} />
                 <button type="button" disabled={this.state.isClickable} onClick={this.sumbitRight.bind(this)} style={this.style.btn} >sumbit</button>
               </div>
-              <div style={{ display: this.state.showRight, width: '400px', height: '100px', background: '#baccd9', position: 'absolute', position: 'relative', top: '-30px' }} >
-                <i className="fa fa-times" onClick={this.cancelRight.bind(this)} style={{ color: '#ee3f4d', fontSize: '30px', textAlign: 'left' }} aria-hidden="true"></i>
-                <div style={{ color: '#8076a3', margin: '0 auto' }}>
+              <div style={{ display: this.state.showRight, width: '450px', height: '100px', background: '#baccd9', position: 'absolute', position: 'relative', top: '-30px' }} >
+                <div style={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center',height:'100px' }}><i className="fa fa-times" onClick={this.cancelRight.bind(this)} style={{ color: '#ee3f4d', fontSize: '30px'}} aria-hidden="true"></i></div>
+                <div style={{ color: '#8076a3',position:'relative',top:'-80px' }}>
                   <img style={{ width: '55px', height: '55px', verticalAlign: 'middle', display: 'inlineBlock', marginLeft: '80px' }} src={`https://github.com/${rightValue}.png?size=200`} />
                   <a href={`https://github.com/${rightValue}`} style={{ color: '#2b73af', fontSize: '30px', verticalAlign: 'middle', marginLeft: '10px' }}>{rightValue}</a>
                 </div>
