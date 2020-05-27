@@ -4,12 +4,11 @@ import React from 'react';
 import Result from './pages/Battle/result'
 import { Route,Redirect,withRouter } from 'react-router-dom';
 
-
 class RouterComponent extends React.Component {
     render() {
         return (
             <div>
-                {/* <Redirect to = "/popular"/> */}
+                <Redirect to = "/popular"/>
                 <Route path = "/popular" exact component={Popular} />
                 <Route path = "/battle"  exact component={Battle} />
                 <Route path = '/battle/result' component={Result}/>
