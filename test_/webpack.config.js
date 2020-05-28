@@ -1,7 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require("html-webpack-plugin")
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-// const {CleanWebpackPlugin} = require('clean-webpack-plugin')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 // const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 module.exports = function (env, argv) {
   const isEnvDevelopment = argv.mode === 'development' || !argv.mode;
@@ -11,7 +11,8 @@ module.exports = function (env, argv) {
     devtool: isEnvProduction ? 'source-map' : isEnvDevelopment && 'cheap-module-source-map',
     entry: './src/index.js',
     output: {
-      filename: 'index.js',
+      // filename: 'index.js',
+      filename: '[name].[contenthash:8].js',
       path: path.resolve(__dirname, 'dist')
     },
     devServer: {
@@ -19,6 +20,8 @@ module.exports = function (env, argv) {
       historyApiFallback: true,
       hot: true,
     },
+
+
     plugins: [
       new HtmlWebpackPlugin({
         filename: 'index.html',
@@ -40,29 +43,35 @@ module.exports = function (env, argv) {
       new MiniCssExtractPlugin({
         filename: '[name].[contenthash:8].css',
         chunkFilename: '[name].[contenthash:8].chunk.css',
-        options:{
-          outputPath:'css/'
+        options: {
+          outputPath: 'css/'
         }
-    
+
       }),
-      // new CleanWebpackPlugin(),
+      new CleanWebpackPlugin(),
       // new BundleAnalyzerPlugin(),
 
     ],
+    resolve: {
+      alias: {
+        '@': path.resolve('src')
+      }
+    },
     module: {
       rules: [
 
         { test: /\.js$/, use: 'babel-loader', exclude: '/node_modules/' },
         // { test:/\.css$/,use:['style-loader', 'css-loader','postcss-loader']},
-        { test: /\.css$/, use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader']},
+        { test: /\.css$/, use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader'] },
         // { test:/\.less$/,use:['style-loader', 'css-loader','postcss-loader','less-loader']},
         { test: /\.less$/, use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'less-loader'] },
-        { test: [/\.(woff|woff2|eot|ttf|otf)$/], loader:"file-loader",options:{name: '[name]_[hash:4].[ext]',outputPath:'assets/'} },
+        { test: [/\.(woff|woff2|eot|ttf|otf)$/], loader: "file-loader", options: { name: '[name]_[hash:4].[ext]', outputPath: 'assets/' } },
         // { test: [/\.(png|jpg|gif)$/], loader:"file-loader",options:{outputPath:'images/'} },
-        { test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/, /\.svg$/], loader: "url-loader", options: { limit: 10000,outputPath:'file' } },
+        { test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/, /\.svg$/], loader: "url-loader", options: { limit: 10000, outputPath: 'file' } },
       ]
 
     },
+
 
   };
 }

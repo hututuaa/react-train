@@ -3,8 +3,8 @@ import axios from 'axios';
 import 'react-fontawesome';
 import 'font-awesome/css/font-awesome.min.css'
 import InfiniteScroll from 'react-infinite-scroller';
-import Card from './compontents/Card/index'
-import Nav from './compontents/Nav/index'
+import Card from './Card/index'
+import Nav from './Nav/index'
 import './index.css'
 
 class Popular extends React.Component {

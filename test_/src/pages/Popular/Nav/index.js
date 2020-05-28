@@ -4,7 +4,7 @@ import 'font-awesome/css/font-awesome.min.css'
 import './index.css'
 
 
-class Header extends React.Component {
+class Nav extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -50,4 +50,4 @@ class Header extends React.Component {
   }
 }
 
-export default Header
+export default Nav
