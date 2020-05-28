@@ -12,7 +12,7 @@ module.exports = function (env, argv) {
     entry: './src/index.js',
     output: {
       // filename: 'index.js',
-      filename: '[name].[contenthash:8].js',
+      filename: 'js/[name].[hash:8].js',
       path: path.resolve(__dirname, 'dist')
     },
     devServer: {
@@ -41,8 +41,8 @@ module.exports = function (env, argv) {
         },
       }),
       new MiniCssExtractPlugin({
-        filename: '[name].[contenthash:8].css',
-        chunkFilename: '[name].[contenthash:8].chunk.css',
+        filename: 'css/[name].[hash:8].css',
+        chunkFilename: '[name].[hash:8].chunk.css',
         options: {
           outputPath: 'css/'
         }
@@ -61,12 +61,10 @@ module.exports = function (env, argv) {
       rules: [
 
         { test: /\.js$/, use: 'babel-loader', exclude: '/node_modules/' },
-        // { test:/\.css$/,use:['style-loader', 'css-loader','postcss-loader']},
+        { test: /\.js$/, use: 'babel-loader', exclude: '/node_modules/',enforce:'pre',use:"eslint-loader"},
         { test: /\.css$/, use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader'] },
-        // { test:/\.less$/,use:['style-loader', 'css-loader','postcss-loader','less-loader']},
         { test: /\.less$/, use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'less-loader'] },
-        { test: [/\.(woff|woff2|eot|ttf|otf)$/], loader: "file-loader", options: { name: '[name]_[hash:4].[ext]', outputPath: 'assets/' } },
-        // { test: [/\.(png|jpg|gif)$/], loader:"file-loader",options:{outputPath:'images/'} },
+        { test: [/\.(woff|woff2|eot|ttf|otf)$/], loader: "url-loader", options: { name: '[name]_[hash:4].[ext]', outputPath: 'assets/' } },
         { test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/, /\.svg$/], loader: "url-loader", options: { limit: 10000, outputPath: 'file' } },
       ]
 

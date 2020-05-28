@@ -1,4 +1,4 @@
-import Popular from '@/pages/popular/index.js';
+import Popular from '@/pages/Popular/index.js';
 import Battle from '@/pages/Battle/index.js';
 import React from 'react';
 import Result from '@/pages/Battle/result'
