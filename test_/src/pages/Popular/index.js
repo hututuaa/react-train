@@ -3,8 +3,8 @@ import axios from 'axios';
 import 'react-fontawesome';
 import 'font-awesome/css/font-awesome.min.css'
 import InfiniteScroll from 'react-infinite-scroller';
-import Card from './compontents/Card/index'
-import Nav from './compontents/Nav/index'
+import Card from './Card/index'
+import Nav from './Nav/index'
 import './index.css'
 
 class Popular extends React.Component {
@@ -18,15 +18,15 @@ class Popular extends React.Component {
       hasMore: true,
       currentPage: 1,
       loadingBottom: false,
+      language: 'All',
       loadingTop: true,
-      gettingData:false
+      gettingData:false,
     };
     this.handleClick = this.handleClick.bind(this);
 
   }
   async componentDidMount() {
   const res =  await this.getData();
-  console.log(res.data.items,"fghjkl")
   }
 
   handleClick = async e => {
@@ -48,15 +48,16 @@ class Popular extends React.Component {
   getData = (changeLanguage = false) => {
     let { currentPage, language, myData, loadingTop, loadingBottom,gettingData } = this.state;
     if(gettingData){
-      console.log('loading....')
       return
     }
     this.setState({
-      gettingData:true
+      gettingData:true,
+      
     })
     currentPage = changeLanguage ? 1 : currentPage
     language = changeLanguage ? changeLanguage : language
-    myData = changeLanguage ? [] : myData
+    myData = changeLanguage ? [] : myData,
+    loadingBottom = changeLanguage?false:true
     const url = `https://api.github.com/search/repositories?q=stars:%3E1+language:${language}&sort=stars&order=desc&type=Repositories&page=${currentPage}`
     return new Promise((resolve, reject) => {
       axios.get(url)
@@ -70,7 +71,7 @@ class Popular extends React.Component {
             currentPage: currentPage + 1,
             language: language,
             loadingTop: false,
-            gettingData:false
+            gettingData:false,
           })
         }).catch(res => {
           reject(res)
@@ -85,7 +86,7 @@ class Popular extends React.Component {
     return (
       <article >
         <Nav handleClick={this.handleClick} />
-        {loadingTop ? <div style={{ textAlign: 'center', marginTop: '100px' }}><i className="fa fa-spinner" style={{ fontSize: '130px' }} /></div> : ""}
+        {loadingTop? <div style={{ textAlign: 'center', marginTop: '100px' }}><i className="fa fa-spinner" style={{ fontSize: '130px' }} /></div> : ""}
         <InfiniteScroll
           pageStart={0}
           initialLoad={false}
@@ -98,7 +99,7 @@ class Popular extends React.Component {
             {myData.map((item, key) => <Card item={item} index={key} key={item.id + '-' + key} />)}
           </div>
         </InfiniteScroll>
-        {loadingBottom? <div style={{ textAlign: 'center', marginTop: '100px' }}><i className="fa fa-spinner" style={{ fontSize: '130px' }} /></div> : ""}
+        {!loadingTop&&loadingBottom? <div style={{ textAlign: 'center', marginTop: '100px' }}><i className="fa fa-spinner" style={{ fontSize: '130px' }} /></div> : ""}
       </article>
     );
   }

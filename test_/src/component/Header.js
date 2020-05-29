@@ -14,7 +14,7 @@ class Header extends React.Component {
           width: '200px', display: 'flex', justifyContent: 'space-around', position: 'relative', left: '100px', top: '50px', fontSize: '24px',
         }}
         >
-          <NavLink to= '/popular' activeClassName="active">Popular</NavLink>
+          <NavLink to= '/popular' activeClassName="active" >Popular</NavLink>
           <NavLink to= '/battle' activeClassName="active">Battle</NavLink>
         </header>
     );
