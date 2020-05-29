@@ -1,7 +1,7 @@
 import React from 'react';
 import 'react-fontawesome';
 import 'font-awesome/css/font-awesome.min.css'
-import './header.css'
+import styles from  './header.css'
 import {NavLink} from 'react-router-dom'
 
 class Header extends React.Component {
@@ -14,8 +14,8 @@ class Header extends React.Component {
           width: '200px', display: 'flex', justifyContent: 'space-around', position: 'relative', left: '100px', top: '50px', fontSize: '24px',
         }}
         >
-          <NavLink to= '/popular' activeClassName="active" >Popular</NavLink>
-          <NavLink to= '/battle' activeClassName="active">Battle</NavLink>
+          <NavLink to= '/popular' activeClassName={styles.active} >Popular</NavLink>
+          <NavLink to= '/battle' activeClassName={styles.active}>Battle</NavLink>
         </header>
     );
   }

@@ -9,7 +9,7 @@ const TerserPlugin = require('terser-webpack-plugin')
 module.exports = {
   mode: 'production',
   devtool: 'source-map',
-  entry: './src/index.js',
+  entry: '@/index.js',
   output: {
     filename: 'js/[name].[contenthash:8].js',
     path: path.resolve(__dirname, 'dist')
@@ -31,8 +31,10 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: "Webpack App",//生成html文件的title
       filename: "index.html",//生成html文件的文件名
-      template: "src/index.html",//模板文件
+      // template: "src/index.html",//模板文件
+      template:  "./public/index.html",
     }),
+
     //使用CleanWebpackPlugin清空文件夹
     new CleanWebpackPlugin(),
     //使用MiniCssExtractPlugin生成CSS文件
@@ -77,8 +79,8 @@ module.exports = {
       },
       {
         test: [/\.(woff|woff2|eot|ttf|otf)$/],
-        loader: "url-loader",
-        options: {name: '[name]_[hash:8].[ext]', outputPath: 'assets/'}
+        loader: "file-loader",
+        options: {name: '[name]_[hash:8].[ext]',  outputPath: 'assets/'}
       },
       //使用babel-loader将ES6转为ES5
       {
@@ -102,8 +104,10 @@ module.exports = {
       },
       //使用html-withimg-loader打包HTML中的图片（<img>标签）
       {test: /\.(htm|html)$/i, loader: 'html-withimg-loader'},
+    
 
 
-    ]
+    ],
+    // extract: false, 
   },
 }

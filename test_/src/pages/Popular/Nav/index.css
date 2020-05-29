@@ -1,9 +1,5 @@
 
-   .nav-active{
-        color: #1890ff
-    }
-  
-    .nav{
+    .navContent{
         display: flex;
         justify-content: center;
         margin-top: 50px;
@@ -12,11 +8,15 @@
         font-size:22px;
         font-weight: bolder;
     }
-    .nav .nav-item{
+    .navActive{
+        color: #1890ff
+    }
+
+    #navItem{
         margin: 20px ;
         cursor: pointer;
-    
+       
     }
-    .nav .nav-item:hover{
-        color:#d2eafb;
-    }
+    #navItem:hover{
+            color:#d2eafb;
+        }

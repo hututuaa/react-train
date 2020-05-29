@@ -4,18 +4,20 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 module.exports = {
   mode: 'development',
   devtool: 'cheap-module-source-map',
-  entry: './src/index.js',
+  entry: '@/index.js',
   output: {
     // filename: 'index.js',
     filename: 'js/[name].[hash:8].js',
-    path: path.resolve(__dirname, 'dist')
+    path: path.resolve(__dirname, 'dist'),
+    publicPath: '/'
   },
   //使用devServer
   devServer: {
     compress: true,//压缩
     port: 8000,//端口号
     open: true,//自动打开浏览器
-    hot: true//热模替换
+    hot: true,//热模替换
+    contentBase:'./dist'
   },
   resolve: {
     alias: {

@@ -1,6 +1,6 @@
 module.exports = {
     "parser": "babel-eslint",
-    "extends": ["airbnb","prettier"],
+    "extends": ["prettier"],
     "env": {
     browser: true,
     es6: true,
@@ -15,7 +15,7 @@ module.exports = {
     'react/destructuring-assignment': 0,
     'react/jsx-one-expression-per-line': 0,
     'indent': 'off',
-    "jsx-a11y/label-has-for":0,
+    // "jsx-a11y/label-has-for":0,
     
     }
 }

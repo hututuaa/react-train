@@ -85,7 +85,7 @@ class Popular extends React.Component {
     return (
       <article >
         <Nav handleClick={this.handleClick} />
-        {loadingTop? <div style={{ textAlign: 'center', marginTop: '100px' }}><i className="fa fa-spinner" style={{ fontSize: '130px' }} /></div> : ""}
+        {loadingTop? <div style={{ textAlign: 'center', marginTop: '100px' }}><i className={[styles.fa,styles.faSpinner]} style={{ fontSize: '130px' }} /></div> : ""}
         <InfiniteScroll
           pageStart={0}
           initialLoad={false}

@@ -30,6 +30,7 @@
     "font-awesome": "^4.7.0",
     "gh-pages": "^2.2.0",
     "html-webpack-plugin": "^4.3.0",
+    "html-withimg-loader": "^0.1.16",
     "husky": "^4.2.5",
     "install": "^0.13.0",
     "less": "^3.11.1",

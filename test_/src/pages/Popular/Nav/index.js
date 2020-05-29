@@ -1,7 +1,7 @@
 import React from 'react';
 import 'react-fontawesome';
 import 'font-awesome/css/font-awesome.min.css'
-import './index.css'
+import styles from './index.css'
 
 
 class Nav extends React.Component {
@@ -31,11 +31,12 @@ class Nav extends React.Component {
     const { tabs } = this.state;
 
     return (
-      <nav className="nav">
+      <nav className={styles.navContent}>
         {
           tabs.map((item, index) => (
             <div
-              className={`nav-item ${index === this.state.currentIndex ? 'nav-active' : null}`}
+              className={`${index === this.state.currentIndex ? styles.navActive : null}`}
+              id={styles.navItem}
               key={item.name}
               onClick={() => { this.props.handleClick(item.name); this.clickIndex(index) }}
             >

@@ -1,59 +1,59 @@
-.title-1 {
+.title1 {
     font-size: 35px;
     text-align: center;
     margin-top: 140px;
     font-weight: 200;
 }
 
-.first-card, .second-card {
+.firstCard, .secondCard {
     width: 1000px;
     margin: 30px auto;
     display: flex;
     justify-content: space-between;
 }
 
-.introduce-1 {
+.introduceOne{
     font-size: 30px;
     font-weight: 200;
     position: relative;
     left: -30px;
 }
 
-.introduce-2 {
+.introduceTwo {
     position: relative;
     left: 62px;
     font-size: 30px;
     font-weight: 200;
 }
 
-.introduce-3 {
+.introduceThree {
     text-align: center;
     font-size: 30px;
     font-weight: 200;
 }
 
-.content-box-1 {
+.contentBox1 {
     width: 220px;
     height: 220px;
     background: #ccc;
     text-align: center;
 }
 
-.content-box-2 {
+.contentBox2 {
     width: 220px;
     height: 220px;
     background: #ccc;
     text-align: center;
 }
 
-.content-box-3 {
+.contentBox3 {
     width: 220px;
     height: 220px;
     background: #ccc;
     text-align: center
 }
 
-.title-2 {
+.title2{
     font-size: 35px;
     text-align: center;
     margin-top: 40px;
@@ -65,13 +65,13 @@
     margin: 100px auto;
 }
 
-.battle-content {
+.battleContent {
     display: flex;
     justify-content: space-around;
     height: 600px;
 }
 
-.content-left, .content-right {
+.contentLeft, .contentRight {
     background-color: #ccc;
     width: 400px;
 }
@@ -123,16 +123,3 @@
 .fa.fa-user-plus {
     color: #f78e3d;
 }
-/* 
-.toResult {
-    text-align: center;
-    margin-top: 30px;
-}
-
-.reset {
-    border: 0;
-    background: #add8f7!important;
-    height: 30px;
-    width: 100px;
-    color: white;
-} */

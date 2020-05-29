@@ -129,38 +129,38 @@ class Battle extends React.Component {
       <div>
         <div>
           <div className={styles.title1}>Instructions</div>
-          <div className="first-card" >
+          <div className={styles.firstCard} >
             <div>
-              <div className="introduce-1">Enter two Github users</div>
-              <div className="content-box-1">
-                <i className="fa fa-users fa-1x" style={{ color: 'black', display: 'inline-block', fontSize: '160px', paddingTop: '10px', }} />
+              <div className={styles.introduceOne}>Enter two Github users</div>
+              <div className={styles.contentBox1}>
+                <i className={[styles.fa,styles.faUsers]} style={{ color: 'black', display: 'inline-block', fontSize: '160px', paddingTop: '10px', }} />
               </div>
             </div>
             <div style={{ width: '300px' }}>
-              <div className="introduce-2">Battle</div>
-              <div className="content-box-2" >
-                <i className="fa fa-plane" style={{ color: 'black', display: 'inline-block', fontSize: '200px', paddingTop: '10px', }} />
+              <div className={styles.introduceTwo}>Battle</div>
+              <div className={styles.contentBox1} >
+                <i className={[styles.fa,styles.faPlane]} style={{ color: 'black', display: 'inline-block', fontSize: '200px', paddingTop: '10px', }} />
               </div>
             </div>
             <div>
-              <div className="introduce-3">See the winner</div>
-              <div className="content-box-3" >
-                <i className="fa fa-trophy fa-1x" style={{ color: '#fed71a', display: 'inline-block', paddingTop: '10px', fontSize: '200px', }}
+              <div className={styles.introduceThree}>See the winner</div>
+              <div className={styles.contentBox1} >
+                <i className={[styles.fa,styles.faTrophy ]} style={{ color: '#fed71a', display: 'inline-block', paddingTop: '10px', fontSize: '200px', }}
                 />
               </div>
             </div>
           </div>
         </div>
         <div>
-          <div className="title-2">Players</div>
-          <div className="second-card">
-            <div className="left-search">
+          <div className={styles.title2}>Players</div>
+          <div className={styles.secondCard}>
+            <div className={styles.leftSearch}>
               <div style={{ fontWeight: '300' }}>Palyer One</div>
-              <div className="operation">
+              <div >
                 <input type="text" placeholder="github username" value={this.state.leftValue} onChange={this.changeLeft.bind(this)} style={this.style.input} />
                 <button type="button" disabled={this.state.isClickable} style={leftValue ? this.style.btnLight : this.style.btn} onClick={(e) => this.sumbitLeft(e)} onKeyDown={(e) => this.onkeydown1(e)}>sumbit</button>
                 <div style={{ display: this.state.showLeft, width: '450px', height: '100px', background: '#baccd9', position: 'relative', top: '-30px' }} >
-                  <div style={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center', height: '100px' }}><i className="fa fa-times" onClick={this.cancelLeft} style={{ color: '#ee3f4d', fontSize: '30px' }} aria-hidden="true"></i></div>
+                  <div style={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center', height: '100px' }}><i className={[styles.fa,styles.faTimes]} onClick={this.cancelLeft} style={{ color: '#ee3f4d', fontSize: '30px' }} aria-hidden="true"></i></div>
                   <div style={{ color: '#8076a3', position: 'relative', top: '-80px', width: '300px' }}>
                     <img style={{ width: '55px', height: '55px', verticalAlign: 'middle', display: 'inlineBlock', marginLeft: '80px' }} src={`https://github.com/${leftValue}.png?size=200`} />
                     <a href={`https://github.com/${leftValue}`} style={{ color: '#2b73af', fontSize: '30px', verticalAlign: 'middle', marginLeft: '10px' }}>{leftValue}</a>
@@ -168,14 +168,14 @@ class Battle extends React.Component {
                 </div>
               </div>
             </div>
-            <div className="right-search">
+            <div className={styles.rightSearch}>
               <div style={{ fontWeight: '300' }}>Palyer Two</div>
-              <div className="operation">
+              <div >
                 <input type="text" placeholder="github username" value={this.state.rightValue} onChange={this.changeRight.bind(this)} style={this.style.input} />
                 <button type="button" disabled={this.state.isClickable} onClick={this.sumbitRight.bind(this)} style={rightValue ? this.style.btnLight : this.style.btn} onKeyDown={(e) => this.onkeydown2(e)}>sumbit</button>
               </div>
               <div style={{ display: this.state.showRight, width: '450px', height: '100px', background: '#baccd9', position: 'relative', top: '-30px' }} >
-                <div style={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center', height: '100px' }}><i className="fa fa-times" onClick={this.cancelRight} style={{ color: '#ee3f4d', fontSize: '30px' }} aria-hidden="true"></i></div>
+                <div style={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center', height: '100px' }}><i className={[styles.fa,styles.faTimes]} onClick={this.cancelRight} style={{ color: '#ee3f4d', fontSize: '30px' }} aria-hidden="true"></i></div>
                 <div style={{ color: '#8076a3', position: 'relative', top: '-80px', width: '300px' }}>
                   <img style={{ width: '55px', height: '55px', verticalAlign: 'middle', display: 'inlineBlock', marginLeft: '80px' }} src={`https://github.com/${rightValue}.png?size=200`} />
                   <a href={`https://github.com/${rightValue}`} style={{ color: '#2b73af', fontSize: '30px', verticalAlign: 'middle', marginLeft: '10px' }}>{rightValue}</a>

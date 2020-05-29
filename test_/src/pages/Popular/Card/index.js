@@ -1,32 +1,31 @@
 import React from 'react'
-import './index.css'
+import styles from './index.css'
 export default class Card extends React.Component {
     render() {
-        
         const {item, index} = this.props
 
         return (
-            <section className="content-item" key={item.id+'-'+item.index}>
+            <section className={styles.contentItem} key={item.id+'-'+item.index}>
                 <div>
-                    <div className="content-num">#{index + 1}</div>
-                    <div className="content-img"><img src={item.owner.avatar_url} style={{ width: '150px', height: '150px' }} alt="" /></div>
-                    <div className="content-name"><a href={item.html_url}>{item.name}</a></div>
-                    <div className="content-desc">
+                    <div className={styles.contentNum}>#{index + 1}</div>
+                    <div className={styles.contentImg}><img src={item.owner.avatar_url} style={{ width: '150px', height: '150px' }} alt="" /></div>
+                    <div className={styles.contentName}><a href={item.html_url}>{item.name}</a></div>
+                    <div className={styles.contentDesc}>
                         <ul>
                             <li>
-                                <i className="fa fa-user fa-1x"  />
+                                <i className={[styles.fa,styles.faUser ]} />
                                 <a href={item.owner.html_url}>{item.name}</a>
                             </li>
                             <li>
-                                <i className="fa fa-star fa-1x"/>
+                                <i className={[styles.fa,styles.faStar]}/>
                                 <span>{item.stargazers_count}  stars</span>
                             </li>
                             <li>
-                                <i className="fa fa-code-fork fa-1x"/>
+                                <i className={[styles.fa,styles.faCodeFork]}/>
                                 <span>{item.forks_count} forks</span>
                             </li>
                             <li>
-                                <i className="fa fa-exclamation-triangle  fa-1x" />
+                                <i className={[styles.fa,styles.faExclamationTriangle]}/>
                                 <span>{item.open_issues_count}  open_issues</span>
                             </li>
                         </ul>
