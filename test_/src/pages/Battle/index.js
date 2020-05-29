@@ -1,5 +1,6 @@
 import React from 'react';
-import './index.css'
+import styles from './index.css'
+// import './index.css'
 import 'react-fontawesome';
 import 'font-awesome/css/font-awesome.min.css'
 import axios from 'axios'
@@ -127,7 +128,7 @@ class Battle extends React.Component {
     return (
       <div>
         <div>
-          <div className="title-1">Instructions</div>
+          <div className={styles.title1}>Instructions</div>
           <div className="first-card" >
             <div>
               <div className="introduce-1">Enter two Github users</div>
@@ -173,7 +174,7 @@ class Battle extends React.Component {
                 <input type="text" placeholder="github username" value={this.state.rightValue} onChange={this.changeRight.bind(this)} style={this.style.input} />
                 <button type="button" disabled={this.state.isClickable} onClick={this.sumbitRight.bind(this)} style={rightValue ? this.style.btnLight : this.style.btn} onKeyDown={(e) => this.onkeydown2(e)}>sumbit</button>
               </div>
-              <div style={{ display: this.state.showRight, width: '450px', height: '100px', background: '#baccd9', position: 'absolute', position: 'relative', top: '-30px' }} >
+              <div style={{ display: this.state.showRight, width: '450px', height: '100px', background: '#baccd9', position: 'relative', top: '-30px' }} >
                 <div style={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center', height: '100px' }}><i className="fa fa-times" onClick={this.cancelRight} style={{ color: '#ee3f4d', fontSize: '30px' }} aria-hidden="true"></i></div>
                 <div style={{ color: '#8076a3', position: 'relative', top: '-80px', width: '300px' }}>
                   <img style={{ width: '55px', height: '55px', verticalAlign: 'middle', display: 'inlineBlock', marginLeft: '80px' }} src={`https://github.com/${rightValue}.png?size=200`} />

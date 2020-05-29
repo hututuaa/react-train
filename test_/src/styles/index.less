@@ -1,25 +1,26 @@
 @import './variable.less';
 
-a{
-    text-decoration:none;
-    color:@text-color;
+a {
+  text-decoration: none;
+  color: @text-color;
 
-}
+  &:hover {
+    color: #d2eafb;
+  }
 
-a:hover{
-    color:#d2eafb;
-}
-a:active{
-    color:@primary-color !important;
+  &:active {
+    color: @primary-color !important;
+  }
 }
 
 // button:hover{
 //     color:@primary-color !important;
 //     cursor: pointer;
 // }
-body{
-    background:whitesmoke;
+body {
+  background: whitesmoke;
 }
- #app{
-        min-width: 1200px;
-    }
+
+#app {
+  min-width: 1200px;
+}

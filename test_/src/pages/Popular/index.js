@@ -5,7 +5,7 @@ import 'font-awesome/css/font-awesome.min.css'
 import InfiniteScroll from 'react-infinite-scroller';
 import Card from './Card/index'
 import Nav from './Nav/index'
-import './index.css'
+import styles from './index.css'
 
 class Popular extends React.Component {
   constructor(props) {
@@ -18,7 +18,6 @@ class Popular extends React.Component {
       hasMore: true,
       currentPage: 1,
       loadingBottom: false,
-      language: 'All',
       loadingTop: true,
       gettingData:false,
     };
@@ -95,7 +94,7 @@ class Popular extends React.Component {
           loader={null}
 
         >
-          <div className="content" style={{ visibility: loadingTop ? 'hidden' : 'visible' }} >
+          <div className={styles.content} style={{ visibility: loadingTop ? 'hidden' : 'visible' }} >
             {myData.map((item, key) => <Card item={item} index={key} key={item.id + '-' + key} />)}
           </div>
         </InfiniteScroll>

@@ -4,8 +4,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --congig webpack.prod.js --mode production",
-    "dev": "webpack-dev-server --devtool eval --progress --colors --hot --open --content-base build"
+    "build": "webpack --config ./config/webpack.prod.js",
+    "dev": "webpack-dev-server --devtool eval --progress --colors --display-modules --config ./config/webpack.dev.js"
   },
   "author": "",
   "license": "ISC",
@@ -67,6 +67,7 @@
     "jsx-loader": "^0.13.2",
     "mini-css-extract-plugin": "^0.9.0",
     "react-hot-loader": "^4.12.21",
+    "uglifyjs-webpack-plugin": "^2.2.0",
     "webpack": "^4.43.0",
     "webpack-bundle-analyzer": "^3.7.0",
     "webpack-cli": "^3.3.11",
