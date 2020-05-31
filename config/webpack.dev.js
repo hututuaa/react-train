@@ -60,7 +60,7 @@ module.exports = {
           'postcss-loader'
         ]
       },
-      { test: /\.less$/, use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'less-loader'] },
+      { test: /\.less$/, use: [MiniCssExtractPlugin.loader, 'css-loader?modules', 'postcss-loader', 'less-loader'] },
       {
         test: [/\.(woff|woff2|eot|ttf|otf)$/],
             use: [{

@@ -30,6 +30,7 @@ module.exports = {
       new OptimizeCssAssetsPlugin(),
       new TerserPlugin()
     ],
+    //代码分离
     splitChunks:{
       chunks:'all',
       name:'vendors~main',
@@ -55,6 +56,7 @@ module.exports = {
       filename: "index.html",//生成html文件的文件名
       // template: "src/index.html",//模板文件
       template: "./public/index.html",
+      favicon: './public/favicon.ico',
     }),
 
     //使用CleanWebpackPlugin清空文件夹
@@ -80,8 +82,8 @@ module.exports = {
   ],
   module: {
     rules: [
-      { test: /\.css$/, use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader'] },
-      { test: /\.less$/, use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'less-loader'] },
+      { test: /\.css$/, use: [MiniCssExtractPlugin.loader, 'css-loader?modules', 'postcss-loader'] },
+      { test: /\.less$/, use: [MiniCssExtractPlugin.loader, 'css-loader?modules', 'postcss-loader', 'less-loader'] },
 
       //使用url-loader打包图片文件
       // (相比file-loader能将一定数值下的图片转为base64的格式)
