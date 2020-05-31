@@ -46,7 +46,7 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: 'css/[name].[contenthash:8].css',
       chunkFilename: 'css/[name].[contenthash:8].chunk.css',
-      // publicPath: '../'
+      publicPath: '../'
     }),
     //使用UglifyJsPlugin丑化js
     //webpack自带此插件(webpack4被移除了)
