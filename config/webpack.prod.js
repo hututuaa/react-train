@@ -29,7 +29,24 @@ module.exports = {
     minimizer: [
       new OptimizeCssAssetsPlugin(),
       new TerserPlugin()
-    ]
+    ],
+    splitChunks:{
+      chunks:'all',
+      name:'vendors~main',
+      cacheGroups:{
+        vendors:{
+          test:/[\\/]node_modules[\\/]/,
+          priority:-10,
+
+        },
+        default:{
+         minChunks:2,
+          priority:-20,
+          reuseExistingChunk:true,
+
+        }
+      }
+    }
   },
   plugins: [
     //使用HtmlWebpackPlugin生成HTML文件
@@ -46,8 +63,7 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: 'css/[name].[contenthash:8].css',
       chunkFilename: 'css/[name].[contenthash:8].chunk.css',
-      publicPath: '../'
-    }),
+      }),
     //使用UglifyJsPlugin丑化js
     //webpack自带此插件(webpack4被移除了)
     //sourceMap能对js代码作映射

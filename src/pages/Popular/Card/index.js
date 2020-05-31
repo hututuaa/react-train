@@ -14,7 +14,7 @@ export default class Card extends React.Component {
                     <div className={styles.contentDesc}>
                         <ul className={styles.ulContent}>
                             <li>
-                                <i className='fa fa-user ' />
+                                <i className="fa fa-user fa-2x" />
                                 <a href={item.owner.html_url}>{item.name}</a>
                             </li>
                             <li>

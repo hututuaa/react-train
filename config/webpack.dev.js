@@ -40,7 +40,7 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: 'css/[name].[hash:8].css',
       chunkFilename: 'css/[name].[hash:8].chunk.css',
-      publicPath: '../'
+        
     }),
   ],
   module: {
