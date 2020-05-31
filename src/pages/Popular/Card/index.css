@@ -1,0 +1,88 @@
+.fa.fa-user {
+  color: #fba414;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.fa.fa-star {
+  color: #fed71a;
+  display: inline-block;
+  position: relative;
+  left: -3px;
+  margin-right: 10px;
+}
+
+.fa.fa-code-fork {
+  color: #0eb0c9;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.fa.fa-exclamation-triangle {
+  color: #ab372f;
+  display: inline-block;
+  position: relative;
+  left: -8px;
+  margin-right: 10px;
+}
+.content {
+  margin: 10px 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.contentItem {
+  height: 450px;
+  width: 23%;
+  background-color: #ccc;
+  margin: 10px;
+}
+
+.contentName {
+  font-size: 24px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.contentName a {
+  text-decoration: none;
+  color: #c02c38;
+}
+
+.contentNum {
+  color: black;
+  font-size: 25px;
+  text-align: center;
+  padding: 20px;
+}
+
+.contentImg {
+  text-align: center;
+}
+
+.contentdesc {
+  margin: 20px 5px;
+  width: 200px;
+}
+
+.contentDesc ul {
+  list-style: none;
+}
+
+.contentDesc ul li {
+  line-height: 30px;
+  width: 300px;
+}
+
+ul li a {
+  text-decoration: none;
+  color: #f1f0ed;
+}
+
+ul li i {
+  font-size: 30px !important;
+  display: block;
+  width: 30px;
+}

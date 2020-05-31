@@ -1,0 +1,130 @@
+.title1 {
+  font-size: 35px;
+  text-align: center;
+  margin-top: 140px;
+  font-weight: 200;
+}
+
+.firstCard,
+.secondCard {
+  width: 1000px;
+  margin: 30px auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.introduceOne {
+  font-size: 30px;
+  font-weight: 200;
+  position: relative;
+  left: -30px;
+}
+
+.introduceTwo {
+  position: relative;
+  left: 62px;
+  font-size: 30px;
+  font-weight: 200;
+}
+
+.introduceThree {
+  text-align: center;
+  font-size: 30px;
+  font-weight: 200;
+}
+
+.contentBox1 {
+  width: 220px;
+  height: 220px;
+  background: #ccc;
+  text-align: center;
+}
+
+.contentBox2 {
+  width: 220px;
+  height: 220px;
+  background: #ccc;
+  text-align: center;
+}
+
+.contentBox3 {
+  width: 220px;
+  height: 220px;
+  background: #ccc;
+  text-align: center;
+}
+
+.title2 {
+  font-size: 35px;
+  text-align: center;
+  margin-top: 40px;
+  font-weight: 200;
+}
+
+.result {
+  width: 1000px;
+  margin: 100px auto;
+}
+
+.battleContent {
+  display: flex;
+  justify-content: space-around;
+  height: 600px;
+}
+
+.contentLeft,
+.contentRight {
+  background-color: #ccc;
+  width: 400px;
+}
+
+.imgOne,
+.imgTwo {
+  width: 150px;
+  height: 150px;
+  margin: 40px auto;
+}
+
+.imgOne img,
+.imgTwo img {
+  max-width: 100% !important;
+  max-height: 100% !important;
+}
+
+.desc {
+  list-style: none;
+}
+
+.desc li {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.desc li a {
+  margin-left: 25px;
+  font-size: 25px;
+  color: black !important;
+  font-weight: 300 !important;
+}
+
+.desc li:first-child a {
+  color: #1890ff !important;
+}
+
+.desc li:last-child a {
+  position: relative;
+  left: -9px;
+}
+
+.fa.fa-compass {
+  color: #7265e6;
+}
+
+.fa.fa-user-o,
+.fa.fa-users {
+  color: #108ee9;
+}
+
+.fa.fa-user-plus {
+  color: #f78e3d;
+}
