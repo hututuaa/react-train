@@ -73,6 +73,7 @@ module.exports = {
             name:'fonts/[name].[hash:8].[ext]',
             limit: 80000
           }
+          
         } //项目设置打包到dist下的fonts文件夹下
       ]
       },
