@@ -1,4 +1,5 @@
 @import './variable.less';
+@import  'http://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css';
 
 a {
   text-decoration: none;
@@ -18,14 +19,27 @@ body {
 }
 
 #app {
-  min-width: 1200px;
+  min-width: 1200px!important;
 }
 
-:global(.fa){
-    display: inline-block;
-  font: normal normal normal 14px/1 FontAwesome !important;
-  font-size: inherit;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;}
+// :global(.fa){
+//   display: inline-block !important;
+//   font: normal normal normal 24px/1 FontAwesome !important;
+//   font-size: inherit;
+//   text-rendering: auto;
+//   -webkit-font-smoothing: antialiased;
+//   -moz-osx-font-smoothing: grayscale;}
 
+:global( .fa.fa-spinner ){
+  
+ animation: turn 1s linear infinite;
+@keyframes turn {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+} 
+
+}

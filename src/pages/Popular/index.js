@@ -1,7 +1,5 @@
 import React from 'react';
 import axios from 'axios';
-import 'react-fontawesome';
-import  'font-awesome/css/font-awesome.min.css'
 import InfiniteScroll from 'react-infinite-scroller';
 import Card from './Card/index'
 import Nav from './Nav/index'
@@ -85,7 +83,7 @@ class Popular extends React.Component {
     return (
       <article >
         <Nav handleClick={this.handleClick} />
-        {loadingTop? <div style={{ textAlign: 'center', marginTop: '100px' }}><i className="fa fa-spinner" style={{ fontSize: '130px' }} /></div> : ""}
+        {loadingTop? <div style={{ textAlign: 'center', marginTop: '100px' }}><i className="fa fa-spinner" style={{ fontSize: '130px'}} /></div> : ""}
         <InfiniteScroll
           pageStart={0}
           initialLoad={false}

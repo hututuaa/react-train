@@ -103,16 +103,16 @@
     font-weight: 300!important;
 }
 
-.desc li:first-child a {
+.firstA {
     color: #1890ff!important;
 }
 
-.desc li:last-child a {
-    position: relative;
-    left: -9px;
+.lastA{
+    position: relative ;
+    left: 4px;
 }
 
-.fa.fa-compass {
+/* .fa.fa-compass {
     color: #7265e6;
 }
 
@@ -122,4 +122,4 @@
 
 .fa.fa-user-plus {
     color: #f78e3d;
-}
+} */

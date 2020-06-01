@@ -9,7 +9,7 @@ module.exports = {
     // filename: 'index.js',
     filename: 'js/[name].[hash:8].js',
     path: path.resolve(__dirname, '../dist'),
-    // publicPath: '/'
+    // publicPath: './'
   },
   //使用devServer
   devServer: {
@@ -40,6 +40,9 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: 'css/[name].[hash:8].css',
       chunkFilename: 'css/[name].[hash:8].chunk.css',
+      allChunks: true,
+      publicPath:'../'
+  
         
     }),
   ],
@@ -51,10 +54,11 @@ module.exports = {
         use: [
           MiniCssExtractPlugin.loader,
           {
-            loader: 'css-loader',
+            loader: 'css-loader?modules',
             options: {
               modules: true //开启css模块化
             },
+          
           },
           
           'postcss-loader'
@@ -62,7 +66,7 @@ module.exports = {
       },
       { test: /\.less$/, use: [MiniCssExtractPlugin.loader, 'css-loader?modules', 'postcss-loader', 'less-loader'] },
       {
-        test: [/\.(woff|woff2|eot|ttf|otf)$/],
+        test: /\.(woff|woff2|svg|ttf|eot)$/,
             use: [{
           loader: 'file-loader',
           options: {
@@ -75,15 +79,15 @@ module.exports = {
       //使用url-loader打包图片文件
       // (相比file-loader能将一定数值下的图片转为base64的格式)
       {
-        test: /\.(png|jpg|gif|bmp|jpeg|svg)$/,
+        test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/, /\.svg$/],
         use: [
           {
             loader: 'url-loader',
             options: {
               limit: 8192,//小于8KB的图片，转换为base64
-              outputPath: 'img',//输出的路径
-              publicPath: '../build/img',//资源路径
-              name: '[hash:8].[ext]'//图片名称(哈希值前8位)
+              // outputPath: 'img',//输出的路径
+              // publicPath: '../build/img',//资源路径
+              name: 'images/[hash:8].[ext]'//图片名称(哈希值前8位)
             }
           }
         ]

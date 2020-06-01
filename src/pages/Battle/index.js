@@ -133,19 +133,19 @@ class Battle extends React.Component {
             <div>
               <div className={styles.introduceOne}>Enter two Github users</div>
               <div className={styles.contentBox1}>
-                <i className='fa fa-users' style={{ color: 'black', display: 'inline-block', fontSize: '160px', paddingTop: '10px', }} />
+                <i className='fa fa-users  fa-1x' style={{ color: 'black', fontSize: '160px', paddingTop: '10px',  color:'#7265e6'}} />
               </div>
             </div>
             <div style={{ width: '300px' }}>
               <div className={styles.introduceTwo}>Battle</div>
               <div className={styles.contentBox1} >
-                <i className="fa  fa-plane" style={{ color: 'black', display: 'inline-block', fontSize: '200px', paddingTop: '10px', }} />
+                <i className="fa  fa-plane" style={{ color: 'black',fontSize: '200px', paddingTop: '10px',color: '#108EE9'}} />
               </div>
             </div>
             <div>
               <div className={styles.introduceThree}>See the winner</div>
               <div className={styles.contentBox1} >
-                <i className='fa fa-trophy' style={{ color: '#fed71a', display: 'inline-block', paddingTop: '10px', fontSize: '200px', }}
+                <i className='fa fa-trophy fa-3x' style={{ color: '#fed71a',color: '#f78e3d',paddingTop: '10px', fontSize: '200px', }}
                 />
               </div>
             </div>
@@ -175,7 +175,7 @@ class Battle extends React.Component {
                 <button type="button" disabled={this.state.isClickable} onClick={this.sumbitRight.bind(this)} style={rightValue ? this.style.btnLight : this.style.btn} onKeyDown={(e) => this.onkeydown2(e)}>sumbit</button>
               </div>
               <div style={{ display: this.state.showRight, width: '450px', height: '100px', background: '#baccd9', position: 'relative', top: '-30px' }} >
-                <div style={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center', height: '100px' }}><i className={[styles.fa, styles.faTimes]} onClick={this.cancelRight} style={{ color: '#ee3f4d', fontSize: '30px' }} aria-hidden="true"></i></div>
+                <div style={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center', height: '100px' }}><i className="fa fa-times" onClick={this.cancelRight} style={{ color: '#ee3f4d', fontSize: '30px' }} aria-hidden="true"></i></div>
                 <div style={{ color: '#8076a3', position: 'relative', top: '-80px', width: '300px' }}>
                   <img style={{ width: '55px', height: '55px', verticalAlign: 'middle', display: 'inlineBlock', marginLeft: '80px' }} src={`https://github.com/${rightValue}.png?size=200`} />
                   <a href={`https://github.com/${rightValue}`} style={{ color: '#2b73af', fontSize: '30px', verticalAlign: 'middle', marginLeft: '10px' }}>{rightValue}</a>

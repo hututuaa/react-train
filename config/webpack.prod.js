@@ -12,7 +12,8 @@ module.exports = {
   entry: '@/index.js',
   output: {
     filename: 'js/[name].[contenthash:8].js',
-    path: path.resolve(__dirname, '../dist')
+    path: path.resolve(__dirname, '../dist'),
+    // publicPath:'./'
   },
   resolve: {
     alias: {
@@ -52,7 +53,7 @@ module.exports = {
   plugins: [
     //使用HtmlWebpackPlugin生成HTML文件
     new HtmlWebpackPlugin({
-      title: "Webpack App",//生成html文件的title
+      title: "Github 热门项目工程化",//生成html文件的title
       filename: "index.html",//生成html文件的文件名
       // template: "src/index.html",//模板文件
       template: "./public/index.html",
@@ -65,6 +66,9 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: 'css/[name].[contenthash:8].css',
       chunkFilename: 'css/[name].[contenthash:8].chunk.css',
+      publicPath:'../',
+      allChunks: true,
+  
       }),
     //使用UglifyJsPlugin丑化js
     //webpack自带此插件(webpack4被移除了)
@@ -94,9 +98,9 @@ module.exports = {
             loader: 'url-loader',
             options: {
               limit: 8192,//小于8KB的图片，转换为base64
-              outputPath: 'img',//输出的路径
-              publicPath: '../build/img',//资源路径
-              name: '[hash:8].[ext]'//图片名称(哈希值前8位)
+              // outputPath: 'img',//输出的路径
+              // publicPath: '../build/img',//资源路径
+              name: 'images/[hash:8].[ext]'//图片名称(哈希值前8位)
             }
           }
         ]

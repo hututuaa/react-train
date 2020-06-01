@@ -1,6 +1,6 @@
 import React from 'react';
-import 'react-fontawesome';
-import 'font-awesome/css/font-awesome.min.css'
+// import 'react-fontawesome';
+// import 'font-awesome/css/font-awesome.min.css'
 import styles from './index.css'
 
 
