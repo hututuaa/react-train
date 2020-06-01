@@ -93,7 +93,6 @@
   "lint-staged": {
     "**/*.less": "stylelint --syntax less",
     "**/*.{js,jsx,tsx,ts,less,md,json}": [
-      "eslint --fix .js",
       "prettier --write",
       "git add"
     ],

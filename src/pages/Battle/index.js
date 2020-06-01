@@ -1,8 +1,6 @@
 import React from "react";
 import styles from "./index.css";
 // import './index.css'
-import "react-fontawesome";
-import "font-awesome/css/font-awesome.min.css";
 // eslint-disable-next-line import/order
 import axios from "axios";
 

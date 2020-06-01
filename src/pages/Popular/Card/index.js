@@ -22,19 +22,19 @@ export default class Card extends React.Component {
           <div className={styles.contentDesc}>
             <ul>
               <li>
-                <i className={[styles.fa, styles.faUser]} />
+                <i className="fa fa-user" />
                 <a href={item.owner.html_url}>{item.name}</a>
               </li>
               <li>
-                <i className={[styles.fa, styles.faStar]} />
+                <i className="fa fa-star" />
                 <span>{item.stargazers_count} stars</span>
               </li>
               <li>
-                <i className={[styles.fa, styles.faCodeFork]} />
+                <i className="fa fa-code-fork" />
                 <span>{item.forks_count} forks</span>
               </li>
               <li>
-                <i className={[styles.fa, styles.faExclamationTriangle]} />
+                <i className="fa fa-exclamation-triangle" />
                 <span>{item.open_issues_count} open_issues</span>
               </li>
             </ul>

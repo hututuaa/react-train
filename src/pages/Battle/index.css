@@ -116,7 +116,13 @@
   left: -9px;
 }
 
-.fa.fa-compass {
+/*
+案例：
+:global(.fa){
+  color: red;
+}
+试着自己实现一下吧！
+fa.fa-compass {
   color: #7265e6;
 }
 
@@ -128,3 +134,4 @@
 .fa.fa-user-plus {
   color: #f78e3d;
 }
+*/
