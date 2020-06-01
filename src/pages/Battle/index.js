@@ -1,8 +1,8 @@
 import React from 'react';
 import styles from './index.css'
 // import './index.css'
-import 'react-fontawesome';
-import 'font-awesome/css/font-awesome.min.css'
+// import 'react-fontawesome';
+// import 'font-awesome/css/font-awesome.min.css'
 import axios from 'axios'
 class Battle extends React.Component {
   constructor(props) {
