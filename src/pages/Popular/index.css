@@ -4,6 +4,7 @@
     flex-direction: row;
     justify-content: space-around;
     flex-wrap: wrap;
+    min-width: 1500px!important;
 }
 
 /* .fa.fa-spinner {

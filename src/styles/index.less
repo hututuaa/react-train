@@ -1,5 +1,5 @@
-@import './variable.less';
-@import  'https://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css';
+@import "./variable.less";
+@import "https://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
 
 a {
   text-decoration: none;
@@ -18,9 +18,9 @@ body {
   background: whitesmoke;
 }
 
-#app {
-  min-width: 1200px!important;
-}
+// #app {
+//   min-width: 1200px!important;
+// }
 
 // :global(.fa){
 //   display: inline-block !important;
@@ -30,16 +30,14 @@ body {
 //   -webkit-font-smoothing: antialiased;
 //   -moz-osx-font-smoothing: grayscale;}
 
-:global( .fa.fa-spinner ){
-  
- animation: turn 1s linear infinite;
-@keyframes turn {
+:global(.fa.fa-spinner) {
+  animation: turn 1s linear infinite;
+  @keyframes turn {
     from {
-        transform: rotate(0deg);
+      transform: rotate(0deg);
     }
     to {
-        transform: rotate(360deg);
+      transform: rotate(360deg);
     }
-} 
-
+  }
 }
